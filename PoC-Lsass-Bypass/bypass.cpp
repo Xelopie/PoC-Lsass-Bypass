@@ -35,13 +35,13 @@ HANDLE GetProcessHandle(DWORD pId) {
 	
 	if (!NT_SUCCESS(status)) {
 		// MessageBox here
-		SimpleMessageBox("Error: Handle Not Found", "GetProcessHandle");
+		SimpleMessageBox("Error: NtQuerySystemInformation failed", "GetProcessHandle");
 	}
 
 	for (UINT32 i = 0; i < info->NumberOfHandles; i++) {
 		auto infoTable = info->Handles[i];
 		HANDLE procHandle = reinterpret_cast<HANDLE>(infoTable.HandleValue);
-		
+
 		if (infoTable.UniqueProcessId == GetCurrentProcessId() && GetProcessId(procHandle) == pId) {
 			return procHandle;
 		}
