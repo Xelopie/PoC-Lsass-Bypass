@@ -9,8 +9,12 @@
 
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 // Windows Header Files
-#include <windows.h>
-
+#include <Windows.h>
+#include <TlHelp32.h>
+#include <Winternl.h>
+#include <stdlib.h>
+#include <sstream>
+#include <WtsApi32.h>
 
 
 // reference additional headers your program requires here
