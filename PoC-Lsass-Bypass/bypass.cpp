@@ -81,6 +81,9 @@ DWORD Main(LPVOID) {
 	SimpleMessageBox(ss.str().c_str(), "Main");
 	ss.str("");
 
+	//ss << "Overwriting memory" << endl;
+	//SimpleMessageBox(ss.str().c_str(), "Main");
+	//ss.str("");
 	//int value = 456456;
 	//WriteProcessMemory(handle, (LPVOID)0xD7714FF774, &value, sizeof(int), NULL);
 	return 0;
